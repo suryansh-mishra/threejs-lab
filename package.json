@@ -1,0 +1,25 @@
+{
+  "name": "threejs-lab",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10"
+  },
+  "trustedDependencies": [
+    "core-js"
+  ],
+  "dependencies": {
+    "@types/three": "^0.170.0",
+    "three": "^0.170.0"
+  }
+}

@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* :root { */
+  /* --background: hsl(0 0% 97.5%);
+    --foreground: hsl(0 0% 28%);
+    --primary: hsl(38 92% 50%);
+    --primary-foreground: hsl(0 0% 22%);
+    --secondary: hsl(203 30% 26%);
+    --secondary-foreground: hsl(223 100% 98%);
+    --muted-high: hsl(0 0% 62%);
+    --muted-low: hsl(0 0% 40%);
+    --accent: hsl(32 100% 92%);
+    --accent-foreground: hsl(0 0% 98%);
+    --destructive: hsl(0, 74%, 54%);
+    --destructive-foreground: hsl(0, 74%, 54%);
+    --border: hsl(0 0% 85%);
+    --input: hsl(0 0% 85%);
+    --ring: hsl(43 96% 56%);
+    --radius: 1rem;
+
+    --header: hsla(0, 0%, 100%, 0.85); */
+  /* } */
+
+  /* .dark {
+    --background: hsl(0 0% 12%);
+    --foreground: hsl(0 0% 90%);
+    --primary: hsl(43 96% 50%);
+    --primary-foreground: hsl(0 0% 12%);
+    --secondary: hsl(223 96% 56%);
+    --secondary-foreground: hsl(223 100% 98%);
+    --muted: hsl(0 0% 20%);
+    --muted-foreground: hsl(0 0% 65%);
+    --accent: hsl(24 96% 50%);
+    --accent-foreground: hsl(0 0% 98%);
+    --destructive: hsl(0 62% 30%);
+    --destructive-foreground: hsl(0 0% 98%);
+    --border: hsl(0 0% 25%);
+    --input: hsl(0 0% 25%);
+    --ring: hsl(43 96% 56%);
+
+    --header: rgba(24, 24, 24, 0.8);
+  } */
+
+  * {
+    box-sizing: border-box;
+  }
+}
