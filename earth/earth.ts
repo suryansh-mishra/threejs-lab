@@ -139,11 +139,13 @@ export class Earth {
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.enableDamping = true;
     this.controls.dampingFactor = 0.03;
+    this.controls.maxDistance = 70;
   }
 
   private setupScene() {
     this.scene = new THREE.Scene();
     this.prepareScene();
+    this.addStars();
     (this.loadingEvent as LoadingEvent).setLoadingProgress(10);
   }
 
@@ -157,6 +159,33 @@ export class Earth {
     this.camera.position.setZ(5);
     this.camera.lookAt(0, 0, 0);
     (this.loadingEvent as LoadingEvent).setLoadingProgress(20);
+  }
+
+  private addStars() {
+    const starsGeometry = new THREE.BufferGeometry();
+    const starsMaterial = new THREE.PointsMaterial({
+      color: 0xffffff,
+      size: 0.04,
+    });
+
+    const starsVertices = [];
+    for (let i = 0; i < 10000; i++) {
+      let x, y, z;
+      do {
+        x = (Math.random() - 0.5) * 100;
+        y = (Math.random() - 0.5) * 100;
+        z = (Math.random() - 0.5) * 100;
+      } while (Math.sqrt(x * x + y * y + z * z) < 10);
+      starsVertices.push(x, y, z);
+    }
+
+    starsGeometry.setAttribute(
+      'position',
+      new THREE.Float32BufferAttribute(starsVertices, 3)
+    );
+
+    const stars = new THREE.Points(starsGeometry, starsMaterial);
+    this.scene?.add(stars);
   }
 
   private prepareScene() {
