@@ -14,6 +14,10 @@ const progressElement = document.getElementById(
   'earth-loading-progress'
 ) as HTMLSpanElement;
 
+const resetViewButton = document.getElementById(
+  'reset-view-button'
+) as HTMLButtonElement;
+
 const earthLoadingEventListener = (state: string, progress: number) => {
   if (state === 'loading') {
     progressElement.textContent = `${progress}%`;
@@ -30,3 +34,5 @@ const earthLoadingEventListener = (state: string, progress: number) => {
 
 const earth = new Earth(earthLoadingEventListener);
 earth.startAnimation();
+
+resetViewButton.addEventListener('click', () => earth.resetView());

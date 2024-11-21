@@ -85,6 +85,7 @@ export class Earth {
   public renderer: THREE.WebGLRenderer;
   public loadingEvent: EventTarget;
   public animationFunctions: (() => void)[] = [];
+  public resetViewFunctions: (() => void)[] = [];
   public controls: OrbitControls | undefined;
 
   constructor(loadingEventListener?: {
@@ -130,7 +131,7 @@ export class Earth {
   }
 
   public resetView() {
-    // TODO: add the reset option for this model
+    this.controls?.reset();
   }
 
   private setupControls() {
