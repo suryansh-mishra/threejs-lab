@@ -169,7 +169,7 @@ export class Earth {
     });
 
     const starsVertices = [];
-    for (let i = 0; i < 10000; i++) {
+    for (let i = 0; i < 6000; i++) {
       let x, y, z;
       do {
         x = (Math.random() - 0.5) * 100;
