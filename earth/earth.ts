@@ -95,6 +95,8 @@ export class Earth {
     ): void;
   }) {
     const canvas = document.createElement('canvas');
+    canvas.style.position = 'relative';
+    canvas.style.zIndex = '10';
     this.loadingEvent = new LoadingEvent();
     if (loadingEventListener)
       this.addLoadingEventListener(loadingEventListener);
@@ -130,6 +132,8 @@ export class Earth {
   private setupControls() {
     if (!this.camera) return;
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    this.controls.enableDamping = true;
+    this.controls.dampingFactor = 0.03;
   }
 
   private setupScene() {
@@ -226,6 +230,7 @@ export class Earth {
   }
 
   private animate() {
+    this.controls?.update();
     this.animationFunctions.forEach((a) => a());
     this.renderer.render(this.scene!, this.camera!);
   }

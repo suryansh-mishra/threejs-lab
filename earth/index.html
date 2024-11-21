@@ -4,7 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Earth - ThreeJS lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .loading-font {
+        font-family: 'Press Start 2P', system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
     <script type="module" src="./script.ts"></script>
   </head>
-  <body></body>
+  <body class="relative">
+    <div
+      class="absolute bottom-0 text-center loading-font text-[#ddd] w-full mb-16 text-xl z-20"
+    >
+      LOADING
+      <span id="earth-loading-progress"></span>
+    </div>
+  </body>
 </html>
