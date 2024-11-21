@@ -129,6 +129,10 @@ export class Earth {
     );
   }
 
+  public resetView() {
+    // TODO: add the reset option for this model
+  }
+
   private setupControls() {
     if (!this.camera) return;
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
@@ -230,6 +234,8 @@ export class Earth {
   }
 
   private animate() {
+    if (!((this.loadingEvent as LoadingEvent).getState() === 'completed'))
+      return;
     this.controls?.update();
     this.animationFunctions.forEach((a) => a());
     this.renderer.render(this.scene!, this.camera!);

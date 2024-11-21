@@ -7,8 +7,25 @@
 import '../global.css';
 import { Earth } from './earth';
 
-const earthLoadingEventListener = (details: any, progress: any) => {
-  console.log(details, progress);
+const loadingElement = document.getElementById(
+  'earth-loading-root'
+) as HTMLDivElement;
+const progressElement = document.getElementById(
+  'earth-loading-progress'
+) as HTMLSpanElement;
+
+const earthLoadingEventListener = (state: string, progress: number) => {
+  if (state === 'loading') {
+    progressElement.textContent = `${progress}%`;
+  }
+  if (progress === 100) {
+    setTimeout(() => {
+      loadingElement.remove();
+    }, 100);
+  }
+  if (state === 'failed') {
+    progressElement.textContent = 'Failed to load';
+  }
 };
 
 const earth = new Earth(earthLoadingEventListener);
